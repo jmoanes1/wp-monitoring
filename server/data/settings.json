@@ -1,0 +1,12 @@
+{
+  "monitorIntervalMs": 300000,
+  "timezone": "Asia/Manila",
+  "sslWarningDays": 30,
+  "sslCriticalDays": 7,
+  "maxHistoryRecords": 2000,
+  "browserNotifications": true,
+  "emailEnabled": false,
+  "allowRealTestSubmissions": false,
+  "screenshotRetentionHours": 24,
+  "requestTimeoutMs": 15000
+}

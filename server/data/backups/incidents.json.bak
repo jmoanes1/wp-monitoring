@@ -1,0 +1,41 @@
+[
+  {
+    "id": "incident_7Hb8k0oKaFJZ",
+    "websiteId": "site_nu2dvawJthXJ",
+    "formId": null,
+    "type": "availability",
+    "status": "resolved",
+    "severity": "critical",
+    "startedAt": "2026-08-17T17:18:42+08:00",
+    "lastCheckedAt": "2026-08-18T10:36:13+08:00",
+    "resolvedAt": "2026-08-18T10:36:13+08:00",
+    "downtimeSeconds": 62251,
+    "errorMessage": "DNS error: ENOTFOUND"
+  },
+  {
+    "id": "incident_cKxI9m_R-VRh",
+    "websiteId": "site_nu2dvawJthXJ",
+    "formId": "form_cIj2fBn3rKj1",
+    "type": "form",
+    "status": "resolved",
+    "severity": "critical",
+    "startedAt": "2026-08-18T10:36:14+08:00",
+    "lastCheckedAt": "2026-08-20T03:59:10.581Z",
+    "resolvedAt": "2026-08-20T03:59:10.581Z",
+    "downtimeSeconds": 177777,
+    "errorMessage": "Form is missing from the page"
+  },
+  {
+    "id": "incident_iKWl118olqBm",
+    "websiteId": "site_nu2dvawJthXJ",
+    "formId": null,
+    "type": "availability",
+    "status": "resolved",
+    "severity": "critical",
+    "startedAt": "2026-08-19T09:38:58+08:00",
+    "lastCheckedAt": "2026-08-19T09:49:00+08:00",
+    "resolvedAt": "2026-08-19T09:49:00+08:00",
+    "downtimeSeconds": 602,
+    "errorMessage": "DNS error: ENOTFOUND"
+  }
+]

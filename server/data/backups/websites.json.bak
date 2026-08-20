@@ -1,0 +1,133 @@
+[
+  {
+    "id": "site_nu2dvawJthXJ",
+    "name": "Bupa Medical",
+    "url": "https://bupa-medical.com/",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 1600,
+    "lastCheckedAt": "2026-08-20T12:22:17+08:00",
+    "lastError": null,
+    "formCount": 1,
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-10-14T15:21:05.000Z",
+      "daysRemaining": 56,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.0.4",
+      "latestVersion": "7.1",
+      "updateAvailable": true,
+      "plugins": [
+        {
+          "slug": "all-in-one-seo-pack",
+          "name": "All In One Seo Pack",
+          "version": "5.0.0.1",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "contact-form-7",
+          "name": "Contact Form 7",
+          "version": "6.1.7",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "jquery-collapse-o-matic",
+          "name": "Jquery Collapse O Matic",
+          "version": "1.0",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": true
+        },
+        {
+          "slug": "elementor-pro",
+          "name": "Elementor Pro",
+          "version": "4.2.1",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "sticky-header-effects-for-elementor",
+          "name": "Sticky Header Effects For Elementor",
+          "version": "2.2.1",
+          "file": null,
+          "latestVersion": "2.2.1",
+          "updateAvailable": false
+        },
+        {
+          "slug": "essential-addons-for-elementor-lite",
+          "name": "Essential Addons For Elementor Lite",
+          "version": "6.7.3",
+          "file": null,
+          "latestVersion": "6.7.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "cookie-law-info",
+          "name": "Cookie Law Info",
+          "version": "3.5.4",
+          "file": null,
+          "latestVersion": "3.5.4",
+          "updateAvailable": false
+        },
+        {
+          "slug": "hcaptcha-for-forms-and-more",
+          "name": "Hcaptcha For Forms And More",
+          "version": "5.2.0",
+          "file": null,
+          "latestVersion": "5.2.0",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.4.9",
+          "latestVersion": "3.4.9",
+          "updateAvailable": false
+        }
+      ],
+      "restApi": true
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "29e9f6822b6f10d8b75c6d467156dece1369c4f195f6a5b1831fcb7e1b26ef1d",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-17T12:40:09+08:00",
+    "updatedAt": "2026-08-20T12:22:17+08:00",
+    "httpStatus": 200,
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": "2026-08-19T16:13:20+08:00",
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null,
+      "lastTrigger": "manual"
+    },
+    "ignoredFormIdentifiers": [
+      "name:Newsletter Form"
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+node_modules/
+.env
+dist/
+logs/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Encrypted WordPress credentials. Never commit this file.
+server/data/credentials.json
+server/data/*.tmp.*
+server/data/test-results/
+
+# Production monitoring records should stay off git.
+# Empty template JSON files are committed; local runtime data can be kept
+# untracked by uncommenting the lines below after first setup:
+# server/data/websites.json
+# server/data/forms.json
+# server/data/notifications.json
+# server/data/incidents.json
+# server/data/monitoring.json
+# server/data/updates.json
+# server/data/users.json
+# server/data/settings.json

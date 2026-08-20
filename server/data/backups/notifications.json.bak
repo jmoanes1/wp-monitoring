@@ -1,0 +1,99 @@
+[
+  {
+    "id": "notif_XmvOWCzDYdmT",
+    "type": "website_offline",
+    "severity": "critical",
+    "title": "WEBSITE OFFLINE",
+    "message": "Bupa Medical is offline — DNS error: ENOTFOUND",
+    "websiteId": "site_nu2dvawJthXJ",
+    "formId": null,
+    "relatedId": "incident_iKWl118olqBm",
+    "dedupeKey": "offline:site_nu2dvawJthXJ",
+    "read": false,
+    "status": "resolved",
+    "criticalAlert": true,
+    "createdAt": "2026-08-19T09:38:58+08:00",
+    "resolvedAt": "2026-08-19T09:49:00+08:00",
+    "metadata": {
+      "websiteName": "Bupa Medical",
+      "websiteType": "lead",
+      "websiteTypeLabel": "Lead",
+      "errorMessage": "DNS error: ENOTFOUND",
+      "previousStatus": "online",
+      "currentStatus": "offline"
+    }
+  },
+  {
+    "id": "notif_UoDUw3JO_CCv",
+    "type": "website_online",
+    "severity": "success",
+    "title": "WEBSITE ONLINE",
+    "message": "Bupa Medical recovered after 10 minutes 2 seconds",
+    "websiteId": "site_nu2dvawJthXJ",
+    "formId": null,
+    "relatedId": "incident_iKWl118olqBm",
+    "dedupeKey": null,
+    "read": false,
+    "status": "resolved",
+    "criticalAlert": false,
+    "createdAt": "2026-08-19T09:49:00+08:00",
+    "resolvedAt": "2026-08-19T09:49:00+08:00",
+    "metadata": {
+      "websiteName": "Bupa Medical",
+      "websiteType": "lead",
+      "websiteTypeLabel": "Lead",
+      "downtimeSeconds": 602,
+      "downtimeLabel": "10 minutes 2 seconds",
+      "startedAt": "2026-08-19T09:38:58+08:00",
+      "resolvedAt": "2026-08-19T09:49:00+08:00"
+    }
+  },
+  {
+    "id": "notif_5kGhT3SNilh3",
+    "type": "update_detected",
+    "severity": "warning",
+    "title": "PLUGIN UPDATE",
+    "message": "Bupa Medical: Elementor 4.2.2 → 4.2.3",
+    "websiteId": "site_nu2dvawJthXJ",
+    "formId": null,
+    "relatedId": "upd_Hw9hYxQJOWkv",
+    "dedupeKey": "update:site_nu2dvawJthXJ:plugin:elementor:4.2.2:4.2.3",
+    "read": false,
+    "status": "active",
+    "criticalAlert": false,
+    "createdAt": "2026-08-20T11:36:45+08:00",
+    "resolvedAt": null,
+    "metadata": {
+      "websiteName": "Bupa Medical",
+      "name": "Elementor",
+      "currentVersion": "4.2.2",
+      "availableVersion": "4.2.3",
+      "type": "plugin",
+      "detectedAt": "2026-08-20T11:36:45+08:00"
+    }
+  },
+  {
+    "id": "notif_vRZOBNXfjquV",
+    "type": "update_detected",
+    "severity": "warning",
+    "title": "WORDPRESS UPDATE",
+    "message": "Bupa Medical: WordPress 7.0.4 → 7.1",
+    "websiteId": "site_nu2dvawJthXJ",
+    "formId": null,
+    "relatedId": "upd_wR4R78w9Oj70",
+    "dedupeKey": "update:site_nu2dvawJthXJ:core:wordpress:7.0.4:7.1",
+    "read": false,
+    "status": "resolved",
+    "criticalAlert": false,
+    "createdAt": "2026-08-20T11:49:08+08:00",
+    "resolvedAt": "2026-08-20T11:58:24+08:00",
+    "metadata": {
+      "websiteName": "Bupa Medical",
+      "name": "WordPress",
+      "currentVersion": "7.0.4",
+      "availableVersion": "7.1",
+      "type": "core",
+      "detectedAt": "2026-08-20T11:49:08+08:00"
+    }
+  }
+]

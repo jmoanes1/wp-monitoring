@@ -1,0 +1,356 @@
+[
+  {
+    "id": "ftest_7sUzuNWgCznW",
+    "websiteId": "site_nu2dvawJthXJ",
+    "websiteName": "Bupa Medical",
+    "formId": "form_Pa-fJGGp6Lmh",
+    "formName": "Get Quote",
+    "formUrl": "https://bupa-medical.com/",
+    "trigger": "manual",
+    "recipient": "john@medisure.com",
+    "startedAt": "2026-08-18T12:40:38+08:00",
+    "completedAt": "2026-08-18T12:40:39+08:00",
+    "durationMs": 1003,
+    "overall": "partially_passed",
+    "checks": [
+      {
+        "key": "load",
+        "label": "Form loads correctly",
+        "ok": true,
+        "detail": "HTTP 200",
+        "skipped": false
+      },
+      {
+        "key": "fields",
+        "label": "Required fields can be completed",
+        "ok": true,
+        "detail": "Filled 8 fields",
+        "skipped": false
+      },
+      {
+        "key": "submit",
+        "label": "Submit button works",
+        "ok": false,
+        "detail": "Form uses CAPTCHA, so an unattended submission cannot be completed",
+        "skipped": false
+      },
+      {
+        "key": "submission",
+        "label": "Form submission succeeds",
+        "ok": false,
+        "detail": "Blocked by CAPTCHA",
+        "skipped": false
+      },
+      {
+        "key": "confirmation",
+        "label": "Success/confirmation message appears",
+        "ok": false,
+        "detail": "Not submitted",
+        "skipped": false
+      },
+      {
+        "key": "email",
+        "label": "Email notification triggered",
+        "ok": null,
+        "detail": "Not available because submission was blocked",
+        "skipped": true
+      },
+      {
+        "key": "errors",
+        "label": "No server-side or frontend errors",
+        "ok": true,
+        "detail": "Page loaded without a server error",
+        "skipped": false
+      }
+    ],
+    "fieldsTested": [
+      {
+        "name": "form_fields[name]",
+        "label": "Full Name",
+        "role": "name",
+        "value": "FORM TEST"
+      },
+      {
+        "name": "form_fields[field_23b1032]",
+        "label": "Gender",
+        "role": "select",
+        "value": "Male"
+      },
+      {
+        "name": "form_fields[field_0834286]",
+        "label": "Date of Birth",
+        "role": "date",
+        "value": "2026-08-18"
+      },
+      {
+        "name": "form_fields[field_54c8b20]",
+        "label": "Nationality",
+        "role": "select",
+        "value": "Singaporean"
+      },
+      {
+        "name": "form_fields[field_5b11712]",
+        "label": "Residence",
+        "role": "select",
+        "value": "Singapore"
+      },
+      {
+        "name": "form_fields[field_a3c01ba]",
+        "label": "Phone Number",
+        "role": "phone",
+        "value": "000-000-0000"
+      },
+      {
+        "name": "form_fields[field_3b84b9b]",
+        "label": "Email Address",
+        "role": "email",
+        "value": "john@medisure.com"
+      },
+      {
+        "name": "form_fields[field_2fb73ef]",
+        "label": "Message",
+        "role": "message",
+        "value": "FORM TEST — Website Monitoring Test. This is a monitoring submission, not a customer inquiry. Please disregard."
+      }
+    ],
+    "confirmationMessage": null,
+    "responseStatus": 200,
+    "errorMessage": "Form uses CAPTCHA, so a full unattended submission could not be completed"
+  },
+  {
+    "id": "ftest_tilgBlS0WEmB",
+    "websiteId": "site_nu2dvawJthXJ",
+    "websiteName": "Bupa Medical",
+    "formId": "form_Pa-fJGGp6Lmh",
+    "formName": "Get Quote",
+    "formUrl": "https://bupa-medical.com/",
+    "trigger": "manual",
+    "recipient": "john@medisure.com",
+    "startedAt": "2026-08-18T12:41:26+08:00",
+    "completedAt": "2026-08-18T12:41:27+08:00",
+    "durationMs": 766,
+    "overall": "partially_passed",
+    "checks": [
+      {
+        "key": "load",
+        "label": "Form loads correctly",
+        "ok": true,
+        "detail": "HTTP 200",
+        "skipped": false
+      },
+      {
+        "key": "fields",
+        "label": "Required fields can be completed",
+        "ok": true,
+        "detail": "Filled 8 fields",
+        "skipped": false
+      },
+      {
+        "key": "submit",
+        "label": "Submit button works",
+        "ok": false,
+        "detail": "Form uses CAPTCHA, so an unattended submission cannot be completed",
+        "skipped": false
+      },
+      {
+        "key": "submission",
+        "label": "Form submission succeeds",
+        "ok": false,
+        "detail": "Blocked by CAPTCHA",
+        "skipped": false
+      },
+      {
+        "key": "confirmation",
+        "label": "Success/confirmation message appears",
+        "ok": false,
+        "detail": "Not submitted",
+        "skipped": false
+      },
+      {
+        "key": "email",
+        "label": "Email notification triggered",
+        "ok": null,
+        "detail": "Not available because submission was blocked",
+        "skipped": true
+      },
+      {
+        "key": "errors",
+        "label": "No server-side or frontend errors",
+        "ok": true,
+        "detail": "Page loaded without a server error",
+        "skipped": false
+      }
+    ],
+    "fieldsTested": [
+      {
+        "name": "form_fields[name]",
+        "label": "Full Name",
+        "role": "name",
+        "value": "FORM TEST"
+      },
+      {
+        "name": "form_fields[field_23b1032]",
+        "label": "Gender",
+        "role": "select",
+        "value": "Male"
+      },
+      {
+        "name": "form_fields[field_0834286]",
+        "label": "Date of Birth",
+        "role": "date",
+        "value": "2026-08-18"
+      },
+      {
+        "name": "form_fields[field_54c8b20]",
+        "label": "Nationality",
+        "role": "select",
+        "value": "Singaporean"
+      },
+      {
+        "name": "form_fields[field_5b11712]",
+        "label": "Residence",
+        "role": "select",
+        "value": "Singapore"
+      },
+      {
+        "name": "form_fields[field_a3c01ba]",
+        "label": "Phone Number",
+        "role": "phone",
+        "value": "000-000-0000"
+      },
+      {
+        "name": "form_fields[field_3b84b9b]",
+        "label": "Email Address",
+        "role": "email",
+        "value": "john@medisure.com"
+      },
+      {
+        "name": "form_fields[field_2fb73ef]",
+        "label": "Message",
+        "role": "message",
+        "value": "FORM TEST — Website Monitoring Test. This is a monitoring submission, not a customer inquiry. Please disregard."
+      }
+    ],
+    "confirmationMessage": null,
+    "responseStatus": 200,
+    "errorMessage": "Form uses CAPTCHA, so a full unattended submission could not be completed"
+  },
+  {
+    "id": "ftest_zPWvHuJ53Wos",
+    "websiteId": "site_nu2dvawJthXJ",
+    "websiteName": "Bupa Medical",
+    "formId": "form_Pa-fJGGp6Lmh",
+    "formName": "Get Quote",
+    "formUrl": "https://bupa-medical.com/",
+    "trigger": "manual",
+    "recipient": "john@medisure.com",
+    "startedAt": "2026-08-19T16:13:18+08:00",
+    "completedAt": "2026-08-19T16:13:19+08:00",
+    "durationMs": 933,
+    "overall": "partially_passed",
+    "checks": [
+      {
+        "key": "load",
+        "label": "Form loads correctly",
+        "ok": true,
+        "detail": "HTTP 200",
+        "skipped": false
+      },
+      {
+        "key": "fields",
+        "label": "Required fields can be completed",
+        "ok": true,
+        "detail": "Filled 8 fields",
+        "skipped": false
+      },
+      {
+        "key": "submit",
+        "label": "Submit button works",
+        "ok": false,
+        "detail": "Form uses CAPTCHA, so an unattended submission cannot be completed",
+        "skipped": false
+      },
+      {
+        "key": "submission",
+        "label": "Form submission succeeds",
+        "ok": false,
+        "detail": "Blocked by CAPTCHA",
+        "skipped": false
+      },
+      {
+        "key": "confirmation",
+        "label": "Success/confirmation message appears",
+        "ok": false,
+        "detail": "Not submitted",
+        "skipped": false
+      },
+      {
+        "key": "email",
+        "label": "Email notification triggered",
+        "ok": null,
+        "detail": "Not available because submission was blocked",
+        "skipped": true
+      },
+      {
+        "key": "errors",
+        "label": "No server-side or frontend errors",
+        "ok": true,
+        "detail": "Page loaded without a server error",
+        "skipped": false
+      }
+    ],
+    "fieldsTested": [
+      {
+        "name": "form_fields[name]",
+        "label": "Full Name",
+        "role": "name",
+        "value": "FORM TEST"
+      },
+      {
+        "name": "form_fields[field_23b1032]",
+        "label": "Gender",
+        "role": "select",
+        "value": "Male"
+      },
+      {
+        "name": "form_fields[field_0834286]",
+        "label": "Date of Birth",
+        "role": "date",
+        "value": "2026-08-19"
+      },
+      {
+        "name": "form_fields[field_54c8b20]",
+        "label": "Nationality",
+        "role": "select",
+        "value": "Singaporean"
+      },
+      {
+        "name": "form_fields[field_5b11712]",
+        "label": "Residence",
+        "role": "select",
+        "value": "Singapore"
+      },
+      {
+        "name": "form_fields[field_a3c01ba]",
+        "label": "Phone Number",
+        "role": "phone",
+        "value": "000-000-0000"
+      },
+      {
+        "name": "form_fields[field_3b84b9b]",
+        "label": "Email Address",
+        "role": "email",
+        "value": "john@medisure.com"
+      },
+      {
+        "name": "form_fields[field_2fb73ef]",
+        "label": "Message",
+        "role": "message",
+        "value": "FORM TEST — Website Monitoring Test. This is a monitoring submission, not a customer inquiry. Please disregard."
+      }
+    ],
+    "confirmationMessage": null,
+    "responseStatus": 200,
+    "errorMessage": "Form uses CAPTCHA, so a full unattended submission could not be completed"
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "upd_-Wh94ODfrKlr",
+    "websiteId": "site_nu2dvawJthXJ",
+    "type": "plugin",
+    "name": "Contact Form 7",
+    "slug": "contact-form-7",
+    "currentVersion": "6.1.6",
+    "availableVersion": "6.1.7",
+    "status": "resolved",
+    "detectedAt": "2026-08-17T12:40:12+08:00",
+    "lastSeenAt": "2026-08-18T11:39:15+08:00",
+    "resolvedAt": "2026-08-18T11:46:30+08:00"
+  },
+  {
+    "id": "upd_Hw9hYxQJOWkv",
+    "websiteId": "site_nu2dvawJthXJ",
+    "type": "plugin",
+    "name": "Elementor",
+    "slug": "elementor",
+    "currentVersion": "4.2.2",
+    "availableVersion": "4.2.3",
+    "status": "pending",
+    "detectedAt": "2026-08-20T11:36:45+08:00",
+    "lastSeenAt": "2026-08-20T12:22:17+08:00",
+    "resolvedAt": null
+  },
+  {
+    "id": "upd_wR4R78w9Oj70",
+    "websiteId": "site_nu2dvawJthXJ",
+    "type": "core",
+    "name": "WordPress",
+    "slug": "wordpress",
+    "currentVersion": "7.0.4",
+    "availableVersion": "7.1",
+    "status": "resolved",
+    "detectedAt": "2026-08-20T11:49:08+08:00",
+    "lastSeenAt": "2026-08-20T11:54:10+08:00",
+    "resolvedAt": "2026-08-20T11:58:24+08:00"
+  },
+  {
+    "id": "upd_gciKbYih_MUo",
+    "websiteId": "site_nu2dvawJthXJ",
+    "type": "core",
+    "name": "WordPress",
+    "slug": "wordpress",
+    "currentVersion": "7.0.4",
+    "availableVersion": "7.1",
+    "status": "resolved",
+    "detectedAt": "2026-08-20T12:03:09+08:00",
+    "lastSeenAt": "2026-08-20T12:07:39+08:00",
+    "resolvedAt": "2026-08-20T12:09:12+08:00"
+  },
+  {
+    "id": "upd_JPkN3r6H2QmJ",
+    "websiteId": "site_nu2dvawJthXJ",
+    "type": "core",
+    "name": "WordPress",
+    "slug": "wordpress",
+    "currentVersion": "7.0.4",
+    "availableVersion": "7.1",
+    "status": "pending",
+    "detectedAt": "2026-08-20T12:17:17+08:00",
+    "lastSeenAt": "2026-08-20T12:22:17+08:00",
+    "resolvedAt": null
+  }
+]
