@@ -10,6 +10,8 @@ const USERS = config.files.users;
 
 export async function ensureDefaultAdmin() {
   const users = await storage.readCollection(USERS);
+  // Existing accounts keep their hashes. Changing DEFAULT_ADMIN_PASSWORD in
+  // .env does not update users.json after the first start.
   if (users.length > 0) return;
 
   const passwordHash = await bcrypt.hash(config.defaultAdminPassword, 12);
@@ -24,13 +26,15 @@ export async function ensureDefaultAdmin() {
 }
 
 export async function authenticateUser(username, password) {
+  const normalizedUsername = String(username || '').trim().toLowerCase();
+  const normalizedPassword = String(password || '');
   const user = await storage.findOne(
     USERS,
-    (item) => item.username.toLowerCase() === String(username).toLowerCase()
+    (item) => item.username.toLowerCase() === normalizedUsername
   );
   if (!user) return null;
 
-  const matches = await bcrypt.compare(password, user.passwordHash);
+  const matches = await bcrypt.compare(normalizedPassword, user.passwordHash);
   if (!matches) return null;
 
   return publicUser(user);
