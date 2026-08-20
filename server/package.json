@@ -22,5 +22,8 @@
     "nodemailer": "^9.0.5",
     "playwright": "^1.62.1",
     "socket.io": "^4.8.1"
+  },
+  "overrides": {
+    "encoding-sniffer": "1.0.2"
   }
 }
