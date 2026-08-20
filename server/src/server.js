@@ -1,68 +1,18 @@
 import http from 'http';
-import path from 'path';
-import express from 'express';
-import cookieParser from 'cookie-parser';
-import { config, defaultSettings } from './config/index.js';
-import { initializeStorage } from './storage/jsonStorage.js';
-import { ensureDefaultAdmin } from './services/authService.js';
+import { config } from './config/index.js';
+import { createApp } from './app.js';
 import { createSocketServer } from './sockets/index.js';
 import { startMonitorWorker } from './workers/monitorWorker.js';
-import { securityMiddleware } from './middleware/security.js';
-import { notFound, errorHandler } from './middleware/errorHandler.js';
-import apiRoutes from './routes/index.js';
 import { logger } from './utils/logger.js';
 
 async function bootstrap() {
-  // Startup order: config already loaded → JSON files → Express → Socket.IO → HTTP listen → worker.
+  // Startup order: JSON files → Express → Socket.IO → HTTP listen → worker.
   logger.info('Loading configuration');
-  await initializeStorage({
-    collections: {
-      [config.files.websites]: [],
-      [config.files.forms]: [],
-      [config.files.notifications]: [],
-      [config.files.incidents]: [],
-      [config.files.monitoring]: [],
-      [config.files.updates]: [],
-      [config.files.users]: [],
-      [config.files.credentials]: [],
-      [config.files.formTests]: []
-    },
-    documents: {
-      [config.files.settings]: defaultSettings
-    }
-  });
-  await ensureDefaultAdmin();
-
-  const app = express();
-  app.set('trust proxy', 1);
-  app.use(...securityMiddleware());
-  app.use(express.json({ limit: '100kb' }));
-  app.use(cookieParser());
-
-  app.get('/api/health', (req, res) => {
-    res.json({ ok: true, timezone: config.timezone });
-  });
-
-  app.use('/api', apiRoutes);
-
-  if (config.env === 'production') {
-    app.use(express.static(config.paths.clientDist));
-    app.get('*', (req, res, next) => {
-      if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) {
-        return next();
-      }
-      return res.sendFile(path.join(config.paths.clientDist, 'index.html'));
-    });
-  }
-
-  app.use(notFound);
-  app.use(errorHandler);
+  const app = await createApp({ serverless: false });
 
   const server = http.createServer(app);
   createSocketServer(server);
 
-  // Bind before starting the worker so a failed listen never leaves a
-  // background monitor running against a dead HTTP server.
   // Bind IPv4 in development so the Vite proxy at 127.0.0.1 can connect.
   // Production listens on all interfaces so a host/reverse proxy can reach it.
   const listenHost = config.env === 'production' ? '0.0.0.0' : '127.0.0.1';

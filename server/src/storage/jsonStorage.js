@@ -37,6 +37,27 @@ async function ensureDirs() {
   await fs.mkdir(config.paths.logsDir, { recursive: true });
 }
 
+/**
+ * On Vercel the bundled JSON lives in a read-only deploy directory, while
+ * writes go to /tmp. Copy a seed file the first time a collection is read.
+ */
+async function hydrateFromSeed(fileName) {
+  if (config.paths.seedDir === config.paths.dataDir) return;
+  const dest = collectionPath(fileName);
+  try {
+    await fs.access(dest);
+    return;
+  } catch {
+    // Dest does not exist yet.
+  }
+  const seedPath = path.join(config.paths.seedDir, fileName);
+  try {
+    await fs.copyFile(seedPath, dest);
+  } catch {
+    // No committed seed; readRaw will create the fallback value.
+  }
+}
+
 async function atomicWrite(filePath, data) {
   const serialized = JSON.stringify(data, null, 2);
   JSON.parse(serialized);
@@ -73,6 +94,7 @@ async function recoverCollection(fileName, fallback) {
 
 async function readRaw(fileName, fallback) {
   await ensureDirs();
+  await hydrateFromSeed(fileName);
   const filePath = collectionPath(fileName);
 
   try {

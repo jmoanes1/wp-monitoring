@@ -1,13 +1,27 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "installCommand": "npm install --prefix client",
+  "installCommand": "npm install --prefix client && npm install --prefix server",
   "buildCommand": "npm run build --prefix client",
   "outputDirectory": "client/dist",
   "rewrites": [
     {
-      "source": "/((?!api/|socket.io/).*)",
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "server/data/**",
+      "maxDuration": 30
+    },
+    "api/[[...path]].js": {
+      "includeFiles": "server/data/**",
+      "maxDuration": 30
+    }
+  }
 }

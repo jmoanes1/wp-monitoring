@@ -5,6 +5,9 @@ import dotenv from 'dotenv';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const serverRoot = path.resolve(__dirname, '../..');
 const projectRoot = path.resolve(serverRoot, '..');
+const onVercel = Boolean(process.env.VERCEL);
+const seedDir = path.join(serverRoot, 'data');
+const dataDir = onVercel ? path.join('/tmp', 'wp-monitor-data') : seedDir;
 
 dotenv.config({ path: path.join(projectRoot, '.env') });
 dotenv.config({ path: path.join(serverRoot, '.env') });
@@ -23,6 +26,7 @@ const monitorInterval = Math.max(
 
 export const config = {
   env: process.env.NODE_ENV || 'development',
+  serverless: onVercel,
   port: parsePositiveInt(process.env.PORT, 5000),
   clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
   timezone: process.env.APP_TIMEZONE || 'Asia/Manila',
@@ -48,10 +52,11 @@ export const config = {
   paths: {
     serverRoot,
     projectRoot,
-    dataDir: path.join(serverRoot, 'data'),
-    backupDir: path.join(serverRoot, 'data', 'backups'),
-    logsDir: path.join(serverRoot, 'logs'),
-    testResultsDir: path.join(serverRoot, 'data', 'test-results'),
+    seedDir,
+    dataDir,
+    backupDir: path.join(dataDir, 'backups'),
+    logsDir: onVercel ? path.join('/tmp', 'wp-monitor-logs') : path.join(serverRoot, 'logs'),
+    testResultsDir: path.join(dataDir, 'test-results'),
     clientDist: path.join(projectRoot, 'client', 'dist')
   },
   files: {

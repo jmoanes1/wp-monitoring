@@ -1,9 +1,13 @@
-import { chromium } from 'playwright';
 import { siteOrigins } from '../utils/ssrf.js';
 import { TEST_VALUES } from '../utils/formTestPayload.js';
 import { classifyField, matchOption, needlesFor } from '../utils/formFieldMapper.js';
 import { saveScreenshot } from '../services/screenshotStore.js';
 import { logger } from '../utils/logger.js';
+
+async function getChromium() {
+  const { chromium } = await import('playwright');
+  return chromium;
+}
 
 const TIMEOUT_MS = 90000;
 const SUCCESS_HINT =
@@ -65,6 +69,7 @@ async function runPlaywrightFormTestInner({ website, form, mode, testId, onStage
 
   try {
     await stage('opening', 'Opening website');
+    const chromium = await getChromium();
     browser = await chromium.launch({ headless: true });
     if (handle) handle.browser = browser;
     const context = await browser.newContext({
