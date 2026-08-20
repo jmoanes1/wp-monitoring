@@ -63,8 +63,11 @@ async function bootstrap() {
 
   // Bind before starting the worker so a failed listen never leaves a
   // background monitor running against a dead HTTP server.
+  // Bind IPv4 in development so the Vite proxy at 127.0.0.1 can connect.
+  // Production listens on all interfaces so a host/reverse proxy can reach it.
+  const listenHost = config.env === 'production' ? '0.0.0.0' : '127.0.0.1';
   try {
-    await listenWithRetry(server, config.port);
+    await listenWithRetry(server, config.port, listenHost);
   } catch (error) {
     if (error.code === 'EADDRINUSE') {
       logger.error(
@@ -75,7 +78,7 @@ async function bootstrap() {
     throw error;
   }
 
-  logger.info(`HTTP server listening on port ${config.port}`);
+  logger.info(`HTTP server listening on ${listenHost}:${config.port}`);
   startMonitorWorker();
 }
 
@@ -84,7 +87,7 @@ async function bootstrap() {
  * released the port yet. Without an 'error' handler, EADDRINUSE becomes
  * an unhandled event and the watcher sits on "Failed running".
  */
-function listenWithRetry(server, port, attempts = 8, delayMs = 500) {
+function listenWithRetry(server, port, host = '127.0.0.1', attempts = 8, delayMs = 500) {
   return new Promise((resolve, reject) => {
     let attempt = 0;
 
@@ -110,7 +113,7 @@ function listenWithRetry(server, port, attempts = 8, delayMs = 500) {
 
       server.once('error', onError);
       server.once('listening', onListening);
-      server.listen(port);
+      server.listen(port, host);
     };
 
     tryListen();
