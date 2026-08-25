@@ -15,14 +15,13 @@ function upsert(list, item, idKey = 'id') {
   return next;
 }
 
-function isFormNotification(item) {
-  return String(item?.type || '').startsWith('form');
+function isFormRecord(item) {
+  return item?.type === 'form' || String(item?.type || '').startsWith('form_');
 }
 
 export function DataProvider({ children }) {
   const { socket } = useSocket();
   const [websites, setWebsites] = useState([]);
-  const [forms, setForms] = useState([]);
   const [notifications, setNotifications] = useState([]);
   const [updates, setUpdates] = useState([]);
   const [history, setHistory] = useState([]);
@@ -30,10 +29,7 @@ export function DataProvider({ children }) {
   const [settings, setSettings] = useState(null);
   const [allowedIntervals, setAllowedIntervals] = useState([]);
   const [toasts, setToasts] = useState([]);
-  const [testProgress, setTestProgress] = useState({});
   const [pluginUpdateProgress, setPluginUpdateProgress] = useState({});
-  const [formTests, setFormTests] = useState([]);
-  const [formTestProgress, setFormTestProgress] = useState({});
   const [monitoring, setMonitoring] = useState({ running: false, lastCompletedAt: null });
   const [loading, setLoading] = useState(true);
   const toastTimers = useRef(new Map());
@@ -73,25 +69,21 @@ export function DataProvider({ children }) {
   );
 
   const refresh = useCallback(async () => {
-    const [sites, formData, notifData, updateData, historyData, settingsData, incidentData, formTestData] = await Promise.all([
+    const [sites, notifData, updateData, historyData, settingsData, incidentData] = await Promise.all([
       api('/websites'),
-      api('/forms'),
       api('/notifications'),
       api('/updates'),
       api('/monitoring/history'),
       api('/settings'),
-      api('/incidents'),
-      api('/forms/tests')
+      api('/incidents')
     ]);
     setWebsites(sites.websites || []);
-    setForms(formData.forms || []);
-    setNotifications((notifData.notifications || []).filter((item) => !isFormNotification(item)));
+    setNotifications((notifData.notifications || []).filter((item) => !isFormRecord(item)));
     setUpdates(updateData.updates || []);
     setHistory((historyData.history || []).filter((item) => item.type !== 'form'));
     setSettings(settingsData.settings);
     setAllowedIntervals(settingsData.allowedIntervals || []);
     setIncidents((incidentData.incidents || []).filter((item) => item.type !== 'form'));
-    setFormTests(formTestData.tests || []);
     setLoading(false);
   }, []);
 
@@ -106,37 +98,19 @@ export function DataProvider({ children }) {
       setWebsites((current) => upsert(current, website));
       if (website?.deleted && website.id) {
         const dropSite = (list) => list.filter((item) => item.websiteId !== website.id);
-        setForms(dropSite);
         setUpdates(dropSite);
         setIncidents(dropSite);
         setNotifications(dropSite);
         setHistory(dropSite);
-        setFormTests(dropSite);
         setPluginUpdateProgress((current) => {
           const next = { ...current };
           delete next[website.id];
           return next;
         });
-        setFormTestProgress((current) => {
-          const next = { ...current };
-          delete next[website.id];
-          return next;
-        });
-        setTestProgress((current) => {
-          const next = { ...current };
-          delete next[website.id];
-          return next;
-        });
-      }
-    };
-    const onForm = (form) => {
-      setForms((current) => upsert(current, form));
-      if (form?.deleted) {
-        setFormTests((current) => current.filter((item) => item.formId !== form.id));
       }
     };
     const onNotification = (notification) => {
-      if (isFormNotification(notification)) return;
+      if (isFormRecord(notification)) return;
       setNotifications((current) => upsert(current, notification));
     };
     const onUpdate = (update) => setUpdates((current) => upsert(current, update));
@@ -147,93 +121,11 @@ export function DataProvider({ children }) {
         current.map((site) => (site.id === payload.websiteId ? { ...site, status: payload.status, responseTime: payload.responseTime } : site))
       );
     });
-    socket.on('form:updated', onForm);
-    socket.on('incident:updated', (incident) => setIncidents((current) => upsert(current, incident)));
-    socket.on('form:statusChanged', (payload) => {
-      setForms((current) =>
-        current.map((form) => (form.id === payload.formId ? { ...form, status: payload.status, previousStatus: payload.previousStatus } : form))
-      );
+    socket.on('incident:updated', (incident) => {
+      if (incident?.type === 'form') return;
+      setIncidents((current) => upsert(current, incident));
     });
-    socket.on('form:broken', ({ form, incident, notification }) => {
-      if (form) setForms((current) => upsert(current, form));
-      if (incident) setIncidents((current) => upsert(current, incident));
-      if (notification) setNotifications((current) => upsert(current, notification));
-    });
-    socket.on('form:recovered', ({ form, incident, notification }) => {
-      if (form) setForms((current) => upsert(current, form));
-      if (incident) setIncidents((current) => upsert(current, incident));
-      if (notification) setNotifications((current) => upsert(current, notification));
-    });
-    socket.on('form:testStarted', (payload) => {
-      setTestProgress((current) => ({
-        ...current,
-        [payload.websiteId]: { status: 'running', message: `Testing ${payload.name}...`, items: [] }
-      }));
-    });
-    socket.on('form:testProgress', (payload) => {
-      setTestProgress((current) => {
-        const existing = current[payload.websiteId] || { items: [] };
-        const items = [...(existing.items || [])];
-        if (payload.formId) {
-          const index = items.findIndex((item) => item.formId === payload.formId);
-          const entry = { formId: payload.formId, name: payload.name, status: payload.status, message: payload.message };
-          if (index === -1) items.push(entry);
-          else items[index] = entry;
-        }
-        return {
-          ...current,
-          [payload.websiteId]: {
-            status: 'running',
-            message: payload.message,
-            stage: payload.stage,
-            formCount: payload.formCount,
-            items
-          }
-        };
-      });
-    });
-    socket.on('form:testCompleted', (payload) => {
-      setTestProgress((current) => ({
-        ...current,
-        [payload.websiteId]: {
-          status: 'completed',
-          message: 'Test completed.',
-          formCount: payload.formCount,
-          items: (payload.results || []).map((form) => ({
-            formId: form.id,
-            name: form.name,
-            status: form.status
-          }))
-        }
-      }));
-      if (payload.results) {
-        setForms((current) => {
-          let next = current.filter((form) => form.websiteId !== payload.websiteId);
-          return [...payload.results, ...next];
-        });
-      }
-    });
-    socket.on('formTest:started', (payload) => {
-      setFormTestProgress((current) => ({ ...current, [payload.websiteId]: payload }));
-    });
-    socket.on('formTest:progress', (payload) => {
-      setFormTestProgress((current) => ({ ...current, [payload.websiteId]: payload }));
-    });
-    socket.on('formTest:saved', (test) => {
-      setFormTests((current) => upsert(current, test));
-    });
-    socket.on('formTest:completed', (payload) => {
-      setFormTestProgress((current) => ({ ...current, [payload.websiteId]: payload }));
-      if (payload.results?.length) {
-        setFormTests((current) => {
-          let next = current.filter((item) => !payload.results.some((result) => result.id === item.id));
-          return [...payload.results, ...next];
-        });
-      }
-    });
-    socket.on('update:detected', (update) => {
-      onUpdate(update);
-    });
+    socket.on('update:detected', onUpdate);
     socket.on('update:resolved', onUpdate);
     socket.on('plugin:updateStarted', (payload) => {
       setPluginUpdateProgress((current) => ({ ...current, [payload.websiteId]: payload }));
@@ -299,7 +191,7 @@ export function DataProvider({ children }) {
     });
     socket.on('notification:new', (notification) => {
       onNotification(notification);
-      if (['form_broken', 'form_recovered'].includes(notification.type)) return;
+      if (isFormRecord(notification)) return;
       pushToast({
         tone: notification.severity === 'critical' ? 'critical' : notification.severity === 'success' ? 'success' : 'warning',
         title: `${notificationEmoji(notification)} ${notification.title}`,
@@ -328,18 +220,7 @@ export function DataProvider({ children }) {
       [
         'website:updated',
         'website:statusChanged',
-        'form:updated',
         'incident:updated',
-        'form:statusChanged',
-        'form:broken',
-        'form:recovered',
-        'form:testStarted',
-        'form:testProgress',
-        'form:testCompleted',
-        'formTest:started',
-        'formTest:progress',
-        'formTest:saved',
-        'formTest:completed',
         'update:detected',
         'update:resolved',
         'plugin:updateStarted',
@@ -378,7 +259,6 @@ export function DataProvider({ children }) {
   const value = useMemo(
     () => ({
       websites,
-      forms,
       notifications,
       updates,
       history,
@@ -386,10 +266,7 @@ export function DataProvider({ children }) {
       settings,
       allowedIntervals,
       toasts,
-      testProgress,
       pluginUpdateProgress,
-      formTests,
-      formTestProgress,
       monitoring,
       loading,
       stats,
@@ -403,7 +280,6 @@ export function DataProvider({ children }) {
     }),
     [
       websites,
-      forms,
       notifications,
       updates,
       history,
@@ -411,10 +287,7 @@ export function DataProvider({ children }) {
       settings,
       allowedIntervals,
       toasts,
-      testProgress,
       pluginUpdateProgress,
-      formTests,
-      formTestProgress,
       monitoring,
       loading,
       stats,

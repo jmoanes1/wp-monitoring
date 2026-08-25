@@ -47,7 +47,6 @@ export default function WebsiteFormModal({ website, onClose, onSaved }) {
   const [changePassword, setChangePassword] = useState(!website || !configured);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
-  const [apiKey, setApiKey] = useState('');
 
   function updateSiteUrl(url) {
     const previousGuess = guessAdminUrl(form.url);
@@ -100,7 +99,6 @@ export default function WebsiteFormModal({ website, onClose, onSaved }) {
         : await api('/websites', { method: 'POST', body: payload });
 
       setPassword('');
-      if (data.connectorApiKey) setApiKey(data.connectorApiKey);
       onSaved?.(data.website);
     } catch (err) {
       setError(err.message);
@@ -231,11 +229,6 @@ export default function WebsiteFormModal({ website, onClose, onSaved }) {
         </div>
 
         {error && <p className="mt-3 text-sm text-rose-600 dark:text-rose-400">{error}</p>}
-        {apiKey && (
-          <p className="mt-3 text-xs text-slate-400">
-            Connector API key (shown once): <code className="break-all text-slate-600 dark:text-slate-300">{apiKey}</code>
-          </p>
-        )}
 
         <div className="mt-5 flex justify-end gap-2">
           <button

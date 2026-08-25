@@ -6,7 +6,7 @@
   "maxHistoryRecords": 2000,
   "browserNotifications": true,
   "emailEnabled": false,
+  "requestTimeoutMs": 15000,
   "allowRealTestSubmissions": false,
-  "screenshotRetentionHours": 24,
-  "requestTimeoutMs": 15000
+  "screenshotRetentionHours": 24
 }

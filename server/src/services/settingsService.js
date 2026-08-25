@@ -33,14 +33,6 @@ export async function updateSettings(changes) {
     next.browserNotifications = Boolean(changes.browserNotifications);
   }
 
-  if (changes.allowRealTestSubmissions !== undefined) {
-    next.allowRealTestSubmissions = Boolean(changes.allowRealTestSubmissions);
-  }
-
-  if (changes.screenshotRetentionHours !== undefined) {
-    next.screenshotRetentionHours = Math.min(168, Math.max(1, Number(changes.screenshotRetentionHours)));
-  }
-
   if (changes.maxHistoryRecords !== undefined) {
     next.maxHistoryRecords = Math.min(10000, Math.max(100, Number(changes.maxHistoryRecords)));
   }

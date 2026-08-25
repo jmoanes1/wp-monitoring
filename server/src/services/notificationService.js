@@ -11,7 +11,7 @@ const FILE = config.files.notifications;
  * Email delivery is intentionally not implemented; sendEmailNotification()
  * is a reserved extension point for later SMTP/provider integration.
  */
-const RECOVERY_TYPES = new Set(['form_recovered', 'website_online', 'update_resolved']);
+const RECOVERY_TYPES = new Set(['website_online', 'update_resolved']);
 
 export async function createNotification(input) {
   const notification = {
@@ -86,21 +86,6 @@ export async function resolveNotification(relatedId, type) {
       const relatedMatch = relatedId && item.relatedId === relatedId;
       const typeMatch = !type || item.type === type;
       if (relatedMatch && typeMatch) {
-        item.status = 'resolved';
-        item.resolvedAt = nowIso();
-        resolved.push({ ...item });
-      }
-    }
-  });
-  resolved.forEach((item) => emit('notification:updated', item));
-  return resolved;
-}
-
-export async function resolveActiveByForm(formId, type = 'form_broken') {
-  const resolved = [];
-  await storage.mutateCollection(FILE, (items) => {
-    for (const item of items) {
-      if (item.formId === formId && item.type === type && item.status !== 'resolved') {
         item.status = 'resolved';
         item.resolvedAt = nowIso();
         resolved.push({ ...item });

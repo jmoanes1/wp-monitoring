@@ -5,7 +5,7 @@ import { nowIso, secondsBetween } from '../utils/time.js';
 
 const FILE = config.files.incidents;
 
-export async function openIncident({ websiteId, formId = null, type = 'form', severity = 'critical', errorMessage }) {
+export async function openIncident({ websiteId, formId = null, type = 'availability', severity = 'critical', errorMessage }) {
   const active = await storage.findOne(
     FILE,
     (item) =>
@@ -37,7 +37,7 @@ export async function openIncident({ websiteId, formId = null, type = 'form', se
   });
 }
 
-export async function resolveIncident({ websiteId, formId = null, type = 'form' }) {
+export async function resolveIncident({ websiteId, formId = null, type = 'availability' }) {
   const active = await storage.findOne(
     FILE,
     (item) =>
@@ -65,15 +65,4 @@ export async function getIncidents({ websiteId, status } = {}) {
     return true;
   });
   return items.sort((a, b) => new Date(b.startedAt) - new Date(a.startedAt));
-}
-
-export async function getActiveIncident(websiteId, formId, type = 'form') {
-  return storage.findOne(
-    FILE,
-    (item) =>
-      item.status === 'active' &&
-      item.websiteId === websiteId &&
-      item.type === type &&
-      (formId ? item.formId === formId : true)
-  );
 }

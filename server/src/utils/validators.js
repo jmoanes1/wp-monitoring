@@ -43,10 +43,6 @@ export function validateWebsiteInput(payload, { partial = false } = {}) {
     data.notes = String(payload.notes || '').slice(0, 2000);
   }
 
-  if (payload.formTestingMonthlyEnabled !== undefined) {
-    data.formTestingMonthlyEnabled = Boolean(payload.formTestingMonthlyEnabled);
-  }
-
   return { errors, data };
 }
 

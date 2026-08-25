@@ -1,5 +1,4 @@
 import * as websiteService from '../services/websiteService.js';
-import * as formService from '../services/formService.js';
 import * as incidentService from '../services/incidentService.js';
 import * as credentialService from '../services/credentialService.js';
 import { validateWebsiteInput } from '../utils/validators.js';
@@ -8,8 +7,6 @@ import { checkWordPress } from '../monitors/wordpressMonitor.js';
 import { checkAvailability } from '../monitors/availabilityMonitor.js';
 import { testWordPressConnection } from '../monitors/wordpressConnectionMonitor.js';
 import * as pluginUpdateService from '../services/pluginUpdateService.js';
-import * as formTestRunner from '../services/formTestRunner.js';
-import * as formTestService from '../services/formTestService.js';
 import { nowIso } from '../utils/time.js';
 
 async function persistAndConnect(website, credData) {
@@ -44,9 +41,8 @@ export async function getOne(req, res, next) {
   try {
     const website = await websiteService.getWebsite(req.params.id);
     if (!website) return res.status(404).json({ error: 'Website not found' });
-    const forms = await formService.listForms({ websiteId: website.id });
     const incidents = await incidentService.getIncidents({ websiteId: website.id });
-    return res.json({ website, forms, incidents });
+    return res.json({ website, incidents });
   } catch (error) {
     next(error);
   }
@@ -120,55 +116,6 @@ export async function remove(req, res, next) {
     const website = await websiteService.deleteWebsite(req.params.id);
     if (!website) return res.status(404).json({ error: 'Website not found' });
     return res.json({ ok: true });
-  } catch (error) {
-    next(error);
-  }
-}
-
-export async function listForms(req, res, next) {
-  try {
-    const website = await websiteService.getWebsite(req.params.id);
-    if (!website) return res.status(404).json({ error: 'Website not found' });
-    const forms = await formService.listForms({ websiteId: website.id });
-    return res.json({ forms });
-  } catch (error) {
-    next(error);
-  }
-}
-
-export async function testForms(req, res, next) {
-  try {
-    const result = await formTestRunner.startWebsiteFormTests(req.params.id, {
-      formId: req.body?.formId || req.params.formId || null,
-      trigger: 'manual'
-    });
-    if (result.error === 'not_found') return res.status(404).json({ error: 'Website not found' });
-    if (result.error === 'busy') return res.status(409).json({ error: result.message });
-    return res.json(result);
-  } catch (error) {
-    next(error);
-  }
-}
-
-export async function listFormTests(req, res, next) {
-  try {
-    const website = await websiteService.getWebsite(req.params.id);
-    if (!website) return res.status(404).json({ error: 'Website not found' });
-    const tests = await formTestService.listFormTests({
-      websiteId: website.id,
-      formId: req.query.formId
-    });
-    return res.json({ tests });
-  } catch (error) {
-    next(error);
-  }
-}
-
-export async function getFormTest(req, res, next) {
-  try {
-    const test = await formTestService.getFormTest(req.params.testId);
-    if (!test || test.websiteId !== req.params.id) return res.status(404).json({ error: 'Form test not found' });
-    return res.json({ test });
   } catch (error) {
     next(error);
   }

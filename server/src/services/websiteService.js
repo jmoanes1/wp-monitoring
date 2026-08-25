@@ -2,12 +2,10 @@ import { randomBytes, createHash } from 'crypto';
 import { config } from '../config/index.js';
 import { storage } from '../storage/jsonStorage.js';
 import { createId } from '../utils/ids.js';
-import { nowIso, addMonthsIso } from '../utils/time.js';
+import { nowIso } from '../utils/time.js';
 import { emit } from '../sockets/emitter.js';
-import { assertSafeUrl, originOf } from '../utils/ssrf.js';
-import { syncFormPriority } from './formService.js';
+import { assertSafeUrl } from '../utils/ssrf.js';
 import { presentWebsite, presentWebsites, removeCredentials, stripSecrets } from './credentialService.js';
-import { emptyFormTesting } from '../utils/formTestPayload.js';
 
 const FILE = config.files.websites;
 
@@ -54,12 +52,9 @@ export async function createWebsite(input) {
     responseTime: null,
     lastCheckedAt: null,
     lastError: null,
-    formCount: 0,
-    ignoredFormIdentifiers: [],
     notes: input.notes || '',
     ssl: null,
     wordpress: null,
-    formTesting: emptyFormTesting(),
     connector: {
       enabled: false,
       apiKeyHash: hashKey(apiKey),
@@ -79,17 +74,6 @@ export async function updateWebsite(id, changes) {
   const current = await getWebsiteRecord(id);
   if (!current) return null;
 
-  if (changes.formTestingMonthlyEnabled !== undefined) {
-    const enabled = Boolean(changes.formTestingMonthlyEnabled);
-    delete changes.formTestingMonthlyEnabled;
-    const previous = current.formTesting || emptyFormTesting();
-    changes.formTesting = {
-      ...previous,
-      monthlyEnabled: enabled,
-      nextTestAt: enabled ? previous.nextTestAt || addMonthsIso(nowIso(), 1) : previous.nextTestAt
-    };
-  }
-
   if (changes.url && normalizeUrl(changes.url) !== normalizeUrl(current.url)) {
     await assertSafeUrl(changes.url);
     const duplicate = await storage.findOne(
@@ -108,9 +92,6 @@ export async function updateWebsite(id, changes) {
   });
   const presented = await presentWebsite(updated);
   emit('website:updated', presented);
-  if (changes.type && changes.type !== current.type) {
-    await syncFormPriority(id, updated.type);
-  }
   if (changes.status && changes.status !== current.status) {
     emit('website:statusChanged', {
       websiteId: updated.id,
@@ -168,10 +149,6 @@ export async function saveWebsiteSnapshot(id, snapshot) {
     });
   }
   return presented;
-}
-
-export function websiteOrigin(website) {
-  return originOf(website.url);
 }
 
 export function regenerateConnectorKey(website) {

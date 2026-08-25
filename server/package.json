@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/server.js",
-    "start": "node src/server.js",
-    "playwright:install": "playwright install chromium"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -19,8 +18,6 @@
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "nanoid": "^5.1.5",
-    "nodemailer": "^9.0.5",
-    "playwright": "^1.62.1",
     "socket.io": "^4.8.1"
   },
   "overrides": {

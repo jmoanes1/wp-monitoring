@@ -4,7 +4,6 @@ import { nowIso } from '../utils/time.js';
 import { encryptSecret, decryptSecret, encryptionConfigured } from '../utils/crypto.js';
 import { assertSafeUrl, siteOrigins } from '../utils/ssrf.js';
 import { emit } from '../sockets/emitter.js';
-import { emptyFormTesting } from '../utils/formTestPayload.js';
 
 const FILE = config.files.credentials;
 const MASK = '••••••••••';
@@ -69,7 +68,6 @@ export async function presentWebsite(website) {
   const record = await getRecord(website.id);
   return stripSecrets({
     ...website,
-    formTesting: website.formTesting || emptyFormTesting(),
     wordpressConnection: toPublicConnection(record)
   });
 }

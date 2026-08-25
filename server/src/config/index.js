@@ -38,16 +38,6 @@ export const config = {
   defaultAdminPassword: process.env.DEFAULT_ADMIN_PASSWORD || 'ChangeMeNow!',
   maxResponseBytes: parsePositiveInt(process.env.MAX_RESPONSE_BYTES, 2 * 1024 * 1024),
   requestTimeoutMs: parsePositiveInt(process.env.REQUEST_TIMEOUT_MS, 15000),
-  formTestEmail: (process.env.TEST_EMAIL || process.env.FORM_TEST_EMAIL || 'john@medisure.com').trim().toLowerCase(),
-  formTestReportEmail: (process.env.FORM_TEST_REPORT_EMAIL || 'john@medishure.com').trim().toLowerCase(),
-  smtp: {
-    host: (process.env.SMTP_HOST || '').trim(),
-    port: parsePositiveInt(process.env.SMTP_PORT, 587),
-    secure: String(process.env.SMTP_SECURE || '').toLowerCase() === 'true',
-    user: (process.env.SMTP_USER || '').trim(),
-    pass: process.env.SMTP_PASS || '',
-    from: (process.env.SMTP_FROM || process.env.SMTP_USER || '').trim()
-  },
   credentialsEncryptionKey: (process.env.CREDENTIALS_ENCRYPTION_KEY || '').trim(),
   paths: {
     serverRoot,
@@ -56,7 +46,6 @@ export const config = {
     dataDir,
     backupDir: path.join(dataDir, 'backups'),
     logsDir: onVercel ? path.join('/tmp', 'wp-monitor-logs') : path.join(serverRoot, 'logs'),
-    testResultsDir: path.join(dataDir, 'test-results'),
     clientDist: path.join(projectRoot, 'client', 'dist')
   },
   files: {
@@ -89,7 +78,5 @@ export const defaultSettings = {
   maxHistoryRecords: 2000,
   browserNotifications: true,
   emailEnabled: false,
-  allowRealTestSubmissions: false,
-  screenshotRetentionHours: 24,
   requestTimeoutMs: config.requestTimeoutMs
 };
