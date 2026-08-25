@@ -1,1 +1,1000 @@
-[]
+[
+  {
+    "id": "site_q2v9IFE1pNVJ",
+    "name": "Bupa Medical",
+    "url": "https://bupa-medical.com",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 663,
+    "lastCheckedAt": "2026-08-25T09:25:01+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-10-14T15:21:05.000Z",
+      "daysRemaining": 51,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.1",
+      "latestVersion": "7.1",
+      "updateAvailable": false,
+      "plugins": [
+        {
+          "slug": "all-in-one-seo-pack",
+          "name": "All In One Seo Pack",
+          "version": "5.0.0.1",
+          "file": null,
+          "latestVersion": "5.0.0.1",
+          "updateAvailable": false
+        },
+        {
+          "slug": "contact-form-7",
+          "name": "Contact Form 7",
+          "version": "6.1.7",
+          "file": null,
+          "latestVersion": "6.1.7",
+          "updateAvailable": false
+        },
+        {
+          "slug": "jquery-collapse-o-matic",
+          "name": "Jquery Collapse O Matic",
+          "version": "1.0",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.2.3",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "elementor-pro",
+          "name": "Elementor Pro",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "sticky-header-effects-for-elementor",
+          "name": "Sticky Header Effects For Elementor",
+          "version": "2.2.1",
+          "file": null,
+          "latestVersion": "2.2.1",
+          "updateAvailable": false
+        },
+        {
+          "slug": "essential-addons-for-elementor-lite",
+          "name": "Essential Addons For Elementor Lite",
+          "version": "6.7.3",
+          "file": null,
+          "latestVersion": "6.7.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "cookie-law-info",
+          "name": "Cookie Law Info",
+          "version": "3.5.5",
+          "file": null,
+          "latestVersion": "3.5.5",
+          "updateAvailable": false
+        },
+        {
+          "slug": "hcaptcha-for-forms-and-more",
+          "name": "Hcaptcha For Forms And More",
+          "version": "5.2.0",
+          "file": null,
+          "latestVersion": "5.2.0",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.4.9",
+          "latestVersion": "3.4.9",
+          "updateAvailable": false
+        }
+      ],
+      "restApi": true
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "d319b9efb8cb36898d6b80639ac90646157ce244d7142100ff17e76669790247",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-24T09:20:02+08:00",
+    "updatedAt": "2026-08-25T09:25:01+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_ZkK-SWfQki04",
+    "name": "Medishure Global",
+    "url": "https://medishureglobal.com/",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 550,
+    "lastCheckedAt": "2026-08-25T09:25:03+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-10-18T14:39:18.000Z",
+      "daysRemaining": 55,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": null,
+      "latestVersion": "7.1",
+      "updateAvailable": false,
+      "plugins": [
+        {
+          "slug": "all-in-one-seo-pack",
+          "name": "All In One Seo Pack",
+          "version": "5.0.0.1",
+          "file": null,
+          "latestVersion": "5.0.0.1",
+          "updateAvailable": false
+        },
+        {
+          "slug": "thinkrank",
+          "name": "Thinkrank",
+          "version": "2.0.1",
+          "file": null,
+          "latestVersion": "2.0.1",
+          "updateAvailable": false
+        },
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.2.3",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "elementor-pro",
+          "name": "Elementor Pro",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "essential-addons-for-elementor-lite",
+          "name": "Essential Addons For Elementor Lite",
+          "version": "6.7.3",
+          "file": null,
+          "latestVersion": "6.7.3",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.4.9",
+          "latestVersion": "3.4.9",
+          "updateAvailable": false
+        }
+      ],
+      "restApi": true,
+      "authenticated": true,
+      "health": {
+        "restAuthenticated": false,
+        "sessionAuthenticated": true
+      }
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "30155be1b3e3d9bdfba77295f0f2cad8d83f8e2036914147ae221e149ddb50d0",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-24T09:21:41+08:00",
+    "updatedAt": "2026-08-25T09:25:03+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_B29vMX2UxLbL",
+    "name": "Bricon Associates Pte Ltd",
+    "url": "https://bricon.com.sg",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 805,
+    "lastCheckedAt": "2026-08-25T09:25:05+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-11-08T13:43:23.000Z",
+      "daysRemaining": 76,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.1",
+      "latestVersion": "7.1",
+      "updateAvailable": false,
+      "plugins": [
+        {
+          "slug": "contact-form-7",
+          "name": "Contact Form 7",
+          "version": "6.1.7",
+          "file": null,
+          "latestVersion": "6.1.7",
+          "updateAvailable": false
+        },
+        {
+          "slug": "jquery-collapse-o-matic",
+          "name": "Jquery Collapse O Matic",
+          "version": "1.0",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": true
+        },
+        {
+          "slug": "elementor-pro",
+          "name": "Elementor Pro",
+          "version": "4.2.1",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "essential-addons-for-elementor-lite",
+          "name": "Essential Addons For Elementor Lite",
+          "version": "6.7.3",
+          "file": null,
+          "latestVersion": "6.7.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "google-site-kit",
+          "name": "Google Site Kit",
+          "version": null,
+          "file": null,
+          "latestVersion": "1.186.0",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.4.9",
+          "latestVersion": "3.4.9",
+          "updateAvailable": false
+        }
+      ],
+      "restApi": true,
+      "authenticated": true,
+      "health": {
+        "restAuthenticated": false,
+        "sessionAuthenticated": true
+      }
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "724445084028d5dbde65c32c0eabea0784fdb8ec6ce61f45248992413864e8b4",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-25T08:44:25+08:00",
+    "updatedAt": "2026-08-25T09:25:05+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_3zwm67iBN-1B",
+    "name": "Luke Medikal",
+    "url": "https://lukemedikal.co.id",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 1320,
+    "lastCheckedAt": "2026-08-25T09:25:13+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-11-04T16:13:35.000Z",
+      "daysRemaining": 72,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.0.4",
+      "latestVersion": "7.1",
+      "updateAvailable": true,
+      "plugins": [
+        {
+          "slug": "litespeed-cache",
+          "name": "Litespeed Cache",
+          "version": null,
+          "file": null,
+          "latestVersion": "7.9",
+          "updateAvailable": false
+        },
+        {
+          "slug": "webp-express",
+          "name": "Webp Express",
+          "version": null,
+          "file": null,
+          "latestVersion": "0.25.15",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "alante-minimal",
+          "name": "Alante Minimal",
+          "version": null,
+          "latestVersion": "1.0.8",
+          "updateAvailable": false
+        },
+        {
+          "slug": "alante",
+          "name": "Alante",
+          "version": null,
+          "latestVersion": "1.6.2",
+          "updateAvailable": false
+        }
+      ],
+      "restApi": true,
+      "authenticated": true,
+      "health": {
+        "restAuthenticated": false,
+        "sessionAuthenticated": true
+      }
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "51265dc23895aeae5ca98c2cc4b60f5d6a530734f672ee933145404813ea74c4",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-25T08:48:21+08:00",
+    "updatedAt": "2026-08-25T09:25:13+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_vfruYQri5_KO",
+    "name": "Luke Medical",
+    "url": "https://luke-medical.com",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 448,
+    "lastCheckedAt": "2026-08-25T09:25:14+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-10-16T06:17:05.000Z",
+      "daysRemaining": 53,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.0.4",
+      "latestVersion": "7.1",
+      "updateAvailable": true,
+      "plugins": [
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": true
+        },
+        {
+          "slug": "elementor-pro",
+          "name": "Elementor Pro",
+          "version": "4.2.1",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "google-site-kit",
+          "name": "Google Site Kit",
+          "version": null,
+          "file": null,
+          "latestVersion": "1.186.0",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.4.4",
+          "latestVersion": "3.4.9",
+          "updateAvailable": true
+        }
+      ],
+      "restApi": true
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "7ad4ce0fc1b04932fdab610ea96f039e858fa3ccc2d44cd0848e75cbdf5befec",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-25T08:51:23+08:00",
+    "updatedAt": "2026-08-25T09:25:14+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_fuAe8uZCTBma",
+    "name": "Asuransi Kesehanku",
+    "url": "https://asuransi-kesehatanku.co.id",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 2013,
+    "lastCheckedAt": "2026-08-25T09:25:17+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-10-07T23:32:28.000Z",
+      "daysRemaining": 44,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.0.4",
+      "latestVersion": "7.1",
+      "updateAvailable": true,
+      "plugins": [
+        {
+          "slug": "contact-form-7",
+          "name": "Contact Form 7",
+          "version": "6.1.7",
+          "file": null,
+          "latestVersion": "6.1.7",
+          "updateAvailable": false
+        },
+        {
+          "slug": "translatepress-multilingual",
+          "name": "Translatepress Multilingual",
+          "version": "3.3.2",
+          "file": null,
+          "latestVersion": "3.3.3",
+          "updateAvailable": true
+        },
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": true
+        },
+        {
+          "slug": "elementor-pro",
+          "name": "Elementor Pro",
+          "version": "4.2.1",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "sticky-header-effects-for-elementor",
+          "name": "Sticky Header Effects For Elementor",
+          "version": "2.2.1",
+          "file": null,
+          "latestVersion": "2.2.1",
+          "updateAvailable": false
+        },
+        {
+          "slug": "google-analytics-for-wordpress",
+          "name": "Google Analytics For Wordpress",
+          "version": "11.1.3",
+          "file": null,
+          "latestVersion": "11.1.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "sticky-menu-or-anything-on-scroll",
+          "name": "Sticky Menu Or Anything On Scroll",
+          "version": "2.1.1",
+          "file": null,
+          "latestVersion": "2.36",
+          "updateAvailable": true
+        },
+        {
+          "slug": "google-site-kit",
+          "name": "Google Site Kit",
+          "version": null,
+          "file": null,
+          "latestVersion": "1.186.0",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.4.4",
+          "latestVersion": "3.4.9",
+          "updateAvailable": true
+        }
+      ],
+      "restApi": true
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "c04f22cccefc94cb03f5e0674c9ae07e082d2397c9770f66c0353147ea591e3f",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-25T09:02:28+08:00",
+    "updatedAt": "2026-08-25T09:25:17+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_JSpBKCk2MPoS",
+    "name": "Quote Medical Intl",
+    "url": "https://quote.medical-intl.com",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 1500,
+    "lastCheckedAt": "2026-08-25T09:25:22+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-11-07T05:30:26.000Z",
+      "daysRemaining": 75,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.1",
+      "latestVersion": "7.1",
+      "updateAvailable": false,
+      "plugins": [
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": true
+        },
+        {
+          "slug": "essential-addons-for-elementor-lite",
+          "name": "Essential Addons For Elementor Lite",
+          "version": "6.7.3",
+          "file": null,
+          "latestVersion": "6.7.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "forminator",
+          "name": "Forminator",
+          "version": "1.57.0",
+          "file": null,
+          "latestVersion": "1.57.1",
+          "updateAvailable": true
+        },
+        {
+          "slug": "google-site-kit",
+          "name": "Google Site Kit",
+          "version": null,
+          "file": null,
+          "latestVersion": "1.186.0",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.4.4",
+          "latestVersion": "3.4.9",
+          "updateAvailable": true
+        }
+      ],
+      "restApi": true
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "5406d1255c5e1463c066d16fd9471fceaa86f60466c40b0fdcc6372dcc3ed521",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-25T09:03:35+08:00",
+    "updatedAt": "2026-08-25T09:25:22+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_VMt5PbsozdL7",
+    "name": "Quotation Medical",
+    "url": "https://quotation.medical-intl.com",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 691,
+    "lastCheckedAt": "2026-08-25T09:25:24+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-10-31T22:28:26.000Z",
+      "daysRemaining": 68,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.0.4",
+      "latestVersion": "7.1",
+      "updateAvailable": true,
+      "plugins": [
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": true
+        },
+        {
+          "slug": "essential-addons-for-elementor-lite",
+          "name": "Essential Addons For Elementor Lite",
+          "version": "6.7.3",
+          "file": null,
+          "latestVersion": "6.7.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "forminator",
+          "name": "Forminator",
+          "version": "1.57.1",
+          "file": null,
+          "latestVersion": "1.57.1",
+          "updateAvailable": false
+        },
+        {
+          "slug": "google-site-kit",
+          "name": "Google Site Kit",
+          "version": null,
+          "file": null,
+          "latestVersion": "1.186.0",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.4.4",
+          "latestVersion": "3.4.9",
+          "updateAvailable": true
+        }
+      ],
+      "restApi": true
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "8d6c8c3c5128cfa0ea6a5ee2b0a1503b99bf7f4480dd67ba9c53d07664826aea",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-25T09:06:31+08:00",
+    "updatedAt": "2026-08-25T09:25:24+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_AHHklClo0C55",
+    "name": "Global Health Insight",
+    "url": "https://globalhealth-insight.com",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 296,
+    "lastCheckedAt": "2026-08-25T09:25:26+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-10-19T19:22:14.000Z",
+      "daysRemaining": 56,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.0.4",
+      "latestVersion": "7.1",
+      "updateAvailable": true,
+      "plugins": [
+        {
+          "slug": "all-in-one-seo-pack",
+          "name": "All In One Seo Pack",
+          "version": "4.9.9",
+          "file": null,
+          "latestVersion": "5.0.0.1",
+          "updateAvailable": true
+        },
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.1.4",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": true
+        },
+        {
+          "slug": "elementor-pro",
+          "name": "Elementor Pro",
+          "version": "4.2.2",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "essential-addons-for-elementor-lite",
+          "name": "Essential Addons For Elementor Lite",
+          "version": "6.7.3",
+          "file": null,
+          "latestVersion": "6.7.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "cookie-law-info",
+          "name": "Cookie Law Info",
+          "version": "3.5.1",
+          "file": null,
+          "latestVersion": "3.5.5",
+          "updateAvailable": true
+        },
+        {
+          "slug": "forminator",
+          "name": "Forminator",
+          "version": "1.57.1",
+          "file": null,
+          "latestVersion": "1.57.1",
+          "updateAvailable": false
+        },
+        {
+          "slug": "wp-smushit",
+          "name": "Wp Smushit",
+          "version": "4.1.2",
+          "file": null,
+          "latestVersion": "4.3.2",
+          "updateAvailable": true
+        }
+      ],
+      "themes": [
+        {
+          "slug": "hello-elementor",
+          "name": "Hello Elementor",
+          "version": "3.1.0",
+          "latestVersion": "3.4.9",
+          "updateAvailable": true
+        }
+      ],
+      "restApi": true
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "e53febfdb069bfbdccc3e30a1c1812dcd764a8c1e88007c948d13cb943d42635",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-25T09:09:08+08:00",
+    "updatedAt": "2026-08-25T09:25:26+08:00",
+    "httpStatus": 200
+  },
+  {
+    "id": "site_4pLMGXc1Io8X",
+    "name": "Rig Associates",
+    "url": "https://www.rig-associates.com",
+    "type": "lead",
+    "monitoringEnabled": true,
+    "status": "online",
+    "responseTime": 3501,
+    "lastCheckedAt": "2026-08-25T09:25:32+08:00",
+    "lastError": null,
+    "formCount": 0,
+    "ignoredFormIdentifiers": [],
+    "notes": "",
+    "ssl": {
+      "valid": true,
+      "applicable": true,
+      "expiresAt": "2026-10-24T00:58:22.000Z",
+      "daysRemaining": 60,
+      "issuer": "Let's Encrypt",
+      "authorized": true,
+      "error": null
+    },
+    "wordpress": {
+      "detected": true,
+      "version": "7.0.4",
+      "latestVersion": "7.1",
+      "updateAvailable": true,
+      "plugins": [
+        {
+          "slug": "contact-form-7",
+          "name": "Contact Form 7",
+          "version": "6.1.7",
+          "file": null,
+          "latestVersion": "6.1.7",
+          "updateAvailable": false
+        },
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "version": "4.7.0",
+          "file": null,
+          "latestVersion": "4.2.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "elementor-pro",
+          "name": "Elementor Pro",
+          "version": "4.2.1",
+          "file": null,
+          "latestVersion": null,
+          "updateAvailable": false
+        },
+        {
+          "slug": "essential-addons-for-elementor-lite",
+          "name": "Essential Addons For Elementor Lite",
+          "version": "6.7.3",
+          "file": null,
+          "latestVersion": "6.7.3",
+          "updateAvailable": false
+        },
+        {
+          "slug": "google-site-kit",
+          "name": "Google Site Kit",
+          "version": null,
+          "file": null,
+          "latestVersion": "1.186.0",
+          "updateAvailable": false
+        }
+      ],
+      "themes": [],
+      "restApi": true
+    },
+    "formTesting": {
+      "monthlyEnabled": false,
+      "lastTestAt": null,
+      "nextTestAt": null,
+      "lastResult": null,
+      "lastTestId": null
+    },
+    "connector": {
+      "enabled": false,
+      "apiKeyHash": "80f3d8129b613586144fe15860f9995b9ff8e3f654f45c330fafdf9ff6a7e606",
+      "lastSeenAt": null
+    },
+    "createdAt": "2026-08-25T09:11:55+08:00",
+    "updatedAt": "2026-08-25T09:25:32+08:00",
+    "httpStatus": 200
+  }
+]
